@@ -1,0 +1,2 @@
+import {LineChart,Line,XAxis,YAxis,Tooltip,ResponsiveContainer,CartesianGrid} from 'recharts';
+export default function PriceChart({data}:{data:any[]}){return <div style={{height:300}}><ResponsiveContainer><LineChart data={data}><CartesianGrid strokeDasharray="3 3"/><XAxis dataKey="checked_at" tickFormatter={(x)=>new Date(x).toLocaleDateString()}/><YAxis/><Tooltip labelFormatter={(x)=>new Date(x).toLocaleString()}/><Line type="monotone" dataKey="price" strokeWidth={3} dot={false}/></LineChart></ResponsiveContainer></div>}
